@@ -7,7 +7,7 @@ import PIL.Image
 import google.generativeai as genai
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-model = genai.GenerativeModel(model_name="gemini-pro-vision")
+model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 # Use streamlit widgets an image file
 uploaded_file = st.file_uploader("Upload an image and let's talk about it.", 

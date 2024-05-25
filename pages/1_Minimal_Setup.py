@@ -10,7 +10,7 @@ st.title("Minimal Setup")
 import google.generativeai as genai
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-model = genai.GenerativeModel(model_name="gemini-pro")
+model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 response = model.generate_content("Write a story about a boy and a backpack.")
 st.write(response.text)

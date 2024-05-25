@@ -7,7 +7,7 @@ st.title("Chatbot with Gemini")
 import google.generativeai as genai
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-model = genai.GenerativeModel(model_name="gemini-pro")
+model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -25,7 +25,7 @@ if prompt := st.chat_input("Message to Gemini..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
-
+           
     with st.chat_message("assistant"):
         chat=st.session_state.chat
         response = chat.send_message(prompt).text
